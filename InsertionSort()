@@ -1,0 +1,25 @@
+def InsertionSort(array):
+    #sorting a list of an array by insertion sort
+    #Eg. A = [31,41,59,26,41,58]
+    
+    #start sorting the array by evaluating the value of the array from j = 0.
+    #the loop ends when j > (length of the array), in this case, the length of the array A is 6.
+    #the range() method exclude the last element which is the value 6, so the j value only incremented to 0 to 5.
+    #we need to evaluate the array from index 0 to 5, since array index starts with 0 not 1.
+    
+    for j in range(1,len(array)):
+    
+        #set key as current value
+        key = array[j]
+        
+        #set i for comparison, the initial value for i is 0. we can compare the index i with j
+        i = j-1
+        
+        #use while loop to compare the current value with previous value
+        while i >= 0 and array[i] > key:
+        
+            #if i>=0 and the value of the array greater than current key value, then swap the values
+            array[i+1] = array[i]
+            i = i-1
+        #set the new key value at the current evaluation position.
+        array[i+1] = key
